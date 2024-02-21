@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>jQuery Todo List</title>
+</head>
+
+<body>
+
+  <div id="header" style="margin-top:150px;"> jQuery Todo List</div>
+  <div class="container">
+    <div class="task-list" id="pending">
+      <h3>Pending</h3>
+    </div>
+    <div class="task-list" id="inProgress">
+      <h3>In Progress</h3>
+    </div>
+    <div class="task-list" id="completed">
+      <h3>Completed</h3>
+    </div>
+    <div class="task-list">
+      <h3>Add a task</h3>
+      <form id="todo-form">
+        <input type="text" placeholder="Title" />
+        <textarea placeholder="Description"></textarea>
+        <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yy)" />
+        <input type="button" class="btn btn-primary" value="Add task" onclick="todo.add();" />
+      </form>
+      <input type="button" class="btn btn-primary" value="Clear all" onclick="todo.clear();" />
+      <div id="delete-div">Drag Here to Delete</div>
+    </div>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="todo.js"></script>
+
+
+
+  <script type="text/javascript">
+    $("#datepicker").datepicker();
+    $("#datepicker").datepicker("option", "dateFormat", "dd/mm/yy");
+    todo.init();
+  </script>
+
+</body>
+
+</html>
