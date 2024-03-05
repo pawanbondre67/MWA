@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Card Color</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        height: 40vh;
+        border: 1px solid #ddd;
+        padding: 10px;
+        cursor: pointer;
+        margin-bottom: 80px;
+        background: rgba(228, 206, 206, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .card.active {
+        background-color: rgba(221, 132, 132, 0.438);
+      }
+      .card.hide {
+        display: none;
+      }
+      button{
+        padding: 10px 20px;
+        border: none;
+        background-color: #3dc740c4;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        margin-bottom: 20px;
+        ;
+      }
+      .btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        bottom: -890px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" id="my-card">
+        <h2>My Card</h2>
+        <p>This is my card</p>
+        <h4>Click on Change Button to Change the BackgroundColor of Card</h4>
+        <h4>Click on Hide Button to hide the Card</h4>
+      </div>
+      <div class="btns">
+        <button id="btn-hide">Hide Card</button>
+      <button id="btn-bg">Change BackgroundColor </button>
+      </div>
+    </div>
+    <script>
+      const button = document.getElementById("btn-bg");
+      const hide = document.getElementById("btn-hide");
+      const card = document.getElementById("my-card");
+       
+      hide.addEventListener("click", function () {
+        if (card.classList.contains("hide")) {
+          card.classList.remove("hide");
+          hide.innerHTML = "Hide Card";
+        } else {
+            card.classList.add("hide");
+            hide.innerHTML = "UnHide Card";
+        }
+      });
+
+      button.addEventListener("click", function () {
+        card.classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
