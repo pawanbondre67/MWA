@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event>
+        <title>Institute Event</title>
+        <description>A special event organized by our institute.</description>
+        <date>June 15, 2024</date>
+        <time>6:00 PM - 8:00 PM</time>
+        <location>Main Auditorium</location>
+    </event>
+</events>
